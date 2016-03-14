@@ -15,6 +15,7 @@ exports.renderAdminView = function(req, res){
   }
   Application.find(query)
     .sort({ added: 1 })
+    .batchSize(2000)
     .exec(function(err, applications){
       if(err){
         res.status(404).send();
