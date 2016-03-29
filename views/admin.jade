@@ -10,15 +10,18 @@ block content
         table#applicationTable
           thead
             tr
-              th Nimi
+              th Etunimi
+              th Sukunimi
+              th Synt.aika
               th Osoite
               th Puhelin
               th Email
           tbody
             each application in applications
               tr(data-application-id=application._id)
-                td
-                  | #{application.firstName} #{application.lastName}
+                td #{application.firstName}
+                td #{application.lastName}
+                td.applicant-birthday #{application.birthday}
                 td 
                   | #{application.address} #{application.zipcode} #{application.city}
                 td #{application.phone}
