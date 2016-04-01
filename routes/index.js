@@ -124,6 +124,8 @@ module.exports = function(app){
    *  Admin
    */
   app.get(config.server_root+'/admin', authenticate(['manager', 'admin']), admin.renderAdminView);
+  app.get(config.server_root+'/export', authenticate(['manager', 'admin']), admin.createXlsx);
+  app.get(config.server_root+'/fixphone', authenticate(['admin']), admin.convertPhoneNumbers);
   
   /*
    * User
