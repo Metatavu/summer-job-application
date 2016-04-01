@@ -57,6 +57,13 @@ html(lang='en')
                 optgroup(label=department.department)
                   each job in department.jobs
                     option(value=job.code, selected=query.secondaryRequest == job.code) #{job.name}
+          li
+            span Yksikkö:
+            br
+            select#departmentFilter.filter(name='department')
+              option(value='') Kaikki
+              each department in positions
+                option(value=department.department, selected=query.organizationalUnit == department.department) #{department.department}
           if (user.role === 'admin')
             li
               a(href=root+'/user/manage') Käyttäjähallinta

@@ -47,6 +47,9 @@ exports.renderAdminView = function(req, res) {
   if (typeof (req.query.secondary) !== 'undefined' && req.query.secondary !== '') {
     query.secondaryRequest = req.query.secondary;
   }
+  if (typeof (req.query.department) !== 'undefined' && req.query.department !== '') {
+    query.organizationalUnit = req.query.department;
+  }
   Application.find(query)
     .sort({ added: 1 })
     .batchSize(2000)
@@ -69,6 +72,9 @@ exports.createXlsx = function(req, res) {
   }
   if (typeof (req.query.secondary) !== 'undefined' && req.query.secondary !== '') {
     query.secondaryRequest = req.query.secondary;
+  }
+  if (typeof (req.query.department) !== 'undefined' && req.query.department !== '') {
+    query.organizationalUnit = req.query.department;
   }
   Application.find(query)
     .sort({ added: 1 })
