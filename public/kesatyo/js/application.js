@@ -3,7 +3,7 @@
 	
   var fieldSaveTimer;
   
-  $('input[type="date"]').datepicker({
+  $('input[data-type="date"]').datepicker({
 		language: 'fi',
 		format: 'd.m.yyyy',
 		weekStart: 1
@@ -66,9 +66,11 @@
         application[$(this).attr('name')] = $(this).val();
     });
     $('.staff-fields input[type="text"]').each(function(){
+      if($(this).attr('data-type') !== 'date'){
         application[$(this).attr('name')] = $(this).val();
+      }  
     });
-    $('.staff-fields input[type="date"]').each(function(){
+    $('.staff-fields input[data-type="date"]').each(function(){
       if($(this).val() !== ''){
         application[$(this).attr('name')] = moment($(this).val(), 'D.M.YYYY').toDate();
       }
@@ -101,7 +103,7 @@
     updateApplication();
 	});
 	
-  $('.staff-fields input[type="date"]').change(function(){
+  $('.staff-fields input[data-type="date"]').change(function(){
     updateApplication();
   });
   

@@ -239,11 +239,11 @@ html(lang='en')
           br
           label.col-md-4.control-label(for='startDateInput') Aloituspäivä:
           br
-          input#startDateInput.form-control(type='date', name='startDate', value=application.startDate)
+          input#startDateInput.form-control(type='text', name='startDate', data-type='date', value=application.startDate)
           br
           label.col-md-4.control-label(for='endDateInput') Lopetuspäivä:
           br
-          input#endDateInput.form-control(type='date', name='endDate', value=application.endDate)
+          input#endDateInput.form-control(type='text', name='endDate', data-type='date', value=application.endDate)
           br
           label.col-md-4.control-label(for='ssnInput') Hetu:
           br
