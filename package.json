@@ -8,21 +8,23 @@
     "email": ""
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
-    "body-parser": "*",
-    "express-session": "*",
-    "cookie-parser": "*",
-    "jade": "*",
-    "underscore": "*",
     "async": "*",
-    "express-validator": "*",
-    "mailgun-js": "*",
+    "bcrypt-nodejs": "*",
+    "body-parser": "*",
     "connect-flash": "*",
+    "cookie-parser": "*",
+    "express": "^4.13.4",
+    "express-session": "*",
+    "express-validator": "*",
+    "jade": "*",
+    "mailgun-js": "*",
+    "mongoose": "*",
+    "multer": "*",
+    "node-xlsx": "^0.6.0",
+    "passport": "*",
+    "passport-local": "*",
     "password-generator": "*",
-    "passport" : "*",
-    "passport-local" : "*",
-    "bcrypt-nodejs" : "*",
-    "multer": "*"
+    "underscore": "*",
+    "moment": "*"
   }
 }
