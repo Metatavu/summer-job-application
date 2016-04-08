@@ -2,6 +2,7 @@ var Application = require('../../model/application');
 var _ = require('underscore');
 var config = require('../../config');
 var xlsx = require('node-xlsx');
+var moment = require('moment');
 
 exports.convertPhoneNumbers = function(req, res){
     Application.find({})
@@ -84,10 +85,12 @@ exports.createXlsx = function(req, res) {
         res.status(404).send();
       } else {
         var rows = [];
-        rows.push(['Nimi', 'Osoite', 'Puhelin', 'Email']);
+        rows.push(['Sukunimi', 'Etunimi', 'Synt.aika', 'Osoite', 'Postinumero', 'Postitoimipaikka', 'Puhelin', 'Email', 'Aloituspvm', 'Lopetuspvm']);
         for(var i = 0; i < applications.length;i++){
           var application = applications[i];
-          var row = [application.firstName+' '+application.lastName, application.address+' '+application.zipcode+' '+application.city, application.phone, application.email];
+          var startDate = typeof(application.startDate) === 'undefined' ? '-' : moment(application.startDate).format('D.M.YYYY');
+          var endDate = typeof(application.endDate) === 'undefined' ? '-' : moment(application.endDate).format('D.M.YYYY');
+          var row = [application.lastName, application.firstName, moment(application.birthday).format('D.M.YYYY'), application.address, application.zipcode, application.city, application.phone, application.email, startDate, endDate];
           rows.push(row);  
         }
         var buffer = xlsx.build([{name: 'Hakemukset', data: rows}]);
