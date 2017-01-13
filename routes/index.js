@@ -26,19 +26,6 @@ function authenticate(allowedRoles) {
 
 module.exports = function(app){
   
-  /*var User = require('../model/user');
-  
-  var newuser = new User();
-  newuser.email = 'heikki.kurhinen@otavanopisto.fi',
-  newuser.password = newuser.generateHash('qwerty');
-  newuser.role = 'admin';
-  newuser.save(function(err, user){
-    if(err){
-      console.log(err);
-    }
-    console.log(user);
-  });*/
-  
   /*
    * Navigation
    */
