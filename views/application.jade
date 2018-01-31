@@ -163,41 +163,27 @@ html(lang='en')
               | Käsittelemättä
           .radio
             label(for='stateInput-1')
-              if application.state == 'processing'
-                input#stateInput-1(name='state', value='processing', checked='checked', type='radio')
-              else
-                input#stateInput-1(name='state', value='processing', type='radio')
-              | Käsittelyssä
-          .radio
-            label(for='stateInput-2')
               if application.state == 'reserved'
                 input#stateInput-2(name='state', value='reserved', checked='checked', type='radio')
               else
                 input#stateInput-2(name='state', value='reserved', type='radio')
               | Varattu
           .radio
-            label(for='stateInput-3')
-              if application.state == 'notified'
-                input#stateInput-3(name='state', value='notified', checked='checked', type='radio')
-              else
-                input#stateInput-3(name='state', value='notified', type='radio')
-              | Ilmoitettu
-          .radio
-            label(for='stateInput-4')
+            label(for='stateInput-2')
               if application.state == 'confirmed'
                 input#stateInput-4(name='state', value='confirmed',checked='checked', type='radio')
               else
                 input#stateInput-4(name='state', value='confirmed', type='radio')
               | Tulo varmistettu
           .radio
-            label(for='stateInput-5')
-              if application.state == 'contract'
+            label(for='stateInput-3')
+              if application.state == 'refused'
                 input#stateInput-5(name='state', value='contract', checked='checked', type='radio')
               else
                 input#stateInput-5(name='state', value='contract', type='radio')
-              | Työsopimus tehty
+              | Ei ota työtä vastaan
           .radio
-            label(for='stateInput-6')
+            label(for='stateInput-4')
               if application.state == 'denied'
                 input#stateInput-6(name='state', value='denied', checked='checked', type='radio')
               else
@@ -220,10 +206,6 @@ html(lang='en')
                   each job in position.jobs
                     option(value=job.code, selected=application.job == job.code) #{job.name}
           br
-          label.col-md-4.control-label(for='bossTitleInput') Esimiehen titteli:
-          br
-          input#bossTitleInput.form-control(type='text', name='bossTitle', value=application.bossTitle)
-          br
           label.col-md-4.control-label(for='bossNameInput') Esimiehen nimi:
           br
           input#bossNameInput.form-control(type='text', name='bossName', value=application.bossName)
@@ -231,7 +213,8 @@ html(lang='en')
           label.col-md-4.control-label(for='jobTimeInput') Viikkotyöaika:
           br
           select#jobTimeInput.form-control(name='workingHours')
-            option(value='30', selected=application.workingHours == 30) 30 tuntia
+            option(value='36.75', selected=application.workingHours == 36.75) toimistotyöaika 36,75 h
+            option(value='38.75', selected=application.workingHours == 38.75) yleistyöaika 38,75 h
           br
           label.col-md-4.control-label(for='salaryInput') Kuukausipalkka:
           br
@@ -244,14 +227,6 @@ html(lang='en')
           label.col-md-4.control-label(for='endDateInput') Lopetuspäivä:
           br
           input#endDateInput.form-control(type='text', name='endDate', data-type='date', value=application.endDate)
-          br
-          label.col-md-4.control-label(for='ssnInput') Hetu:
-          br
-          input#ssnInput.form-control(type='text', name='ssn', value=application.ssn)
-          br
-          label.col-md-4.control-label(for='bankInfoInput') Pankkitili:
-          br
-          input#bankInfoInput.form-control(type='text', name='bankAccont', value=application.bankAccont)
           br
           label.col-md-4.control-label(for='huomInput') Lisätietoja:
           br

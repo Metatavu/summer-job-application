@@ -33,11 +33,9 @@ html(lang='en')
             select#stateFilter.filter(name='state')
               option(value='') Kaikki
               option(value='waiting', selected=query.state == 'waiting') Käsittelemättä
-              option(value='processing', selected=query.state == 'processing') Käsittelyssä
               option(value='reserved', selected=query.state == 'reserved') Varattu
-              option(value='notified', selected=query.state == 'notified') Ilmoitettu
               option(value='confirmed', selected=query.state == 'confirmed') Tulo varmistettu
-              option(value='contract', selected=query.state == 'contract') Työsopimus tehty
+              option(value='contract', selected=query.state == 'refused') Ei ota työtä vastaan
               option(value='denied', selected=query.state == 'denied') Hylätty
           li
             span Ensisijainen toive:

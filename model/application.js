@@ -2,17 +2,14 @@ var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
   // Fields for application handler
-  state: { type: String, default:'waiting', enum: ['waiting', 'processing', 'reserved', 'notified', 'confirmed', 'contract', 'denied'] },
+  state: { type: String, default:'waiting', enum: ['waiting', 'reserved', 'confirmed', 'contract', 'refused', 'denied'] },
   organizationalUnit: {type: String},
   job: {type: String},
-  bossTitle: {type: String},
   bossName: {type: String},
   workingHours: {type: Number},
   salary: {type: Number},
   startDate: {type: Date},
   endDate: {type: Date},
-  ssn: {type: String},
-  bankAccont: {type: String},
   info: {type: String},
   // Fields for applicant
   added: {type: Number, default: Date.now },
@@ -21,7 +18,7 @@ var schema = new mongoose.Schema({
   address: { type: String, required: true },
   zipcode: { type: Number, required: true },
   city: { type: String, required: true },
-  phone: { type: Number, required: true },
+  phone: { type: String, required: true },
   birthday: { type: Date, required: true },
   sex: { type: String, required: true, enum: ['male', 'female'] },
   email: { type: String, required: true },
