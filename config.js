@@ -1,7 +1,7 @@
 module.exports = {
-  port: 3000,
-  server_root: '/kesatyo',
-  session_secret: 'ok1h34iou54h198h90fh1q890123f8j902',
+  port: 80,
+  server_root: '/',
+  session_secret: 'supersiikret',
   mail: {
     api_key: '',
     domain: '',
@@ -11,41 +11,46 @@ module.exports = {
     host: 'localhost',
     table: 'sjapplication'
   },
-  positions: [
-    {department: 'Konsernipalvelut', jobs: [
-      {name: 'Asiointipiste', code: 'asiointipiste'},
-      {name: 'Ruoka- ja puhtauspalvelut', code: 'ruoka'},
+  positions: [{
+    department: 'Sivistyksen ja hyvinvoinnin palvelualue',
+    jobs: [
+      {name: 'Varhaiskasvatus, päivähoito', code: 'varhaiskasvatuspaivahoito'},
+      {name: 'Kirjasto', code: 'kirjasto'},
+      {name: 'Liikunta, ulkoilualueet, kentät, jäähalli', code: 'liikuntaulkoilualueetkentatjaahalli'},
+      {name: 'Liikunta, uimakoulut ja urheilukoulut', code: 'liikuntauimakoulutjaurheilukoulut'},
+      {name: 'Nuoriso', code: 'nuoriso'},
+      {name: 'Museot', code: 'museot'},
+      {name: 'Kulttuuri, näyttely-, tapahtuma- ja esiintyjätehtävät', code: 'kulttuurinayttelytapahtumajaesiintyjatehtavat'},
+    ]
+  }, {
+    department: 'Asumisen ja toimintaympäristön palvelualue',
+    jobs: [
+      {name: 'Tilapalvelut, kiinteistöjen piha-alueet', code: 'tilapalvelutkiinteistojenpihaalueet'},
+      {name: 'Viherpalvelut Hyvönen Oy, puisto- ja puhtaanapitotyöt/ keskustan alue', code: 'viherpalveluthyvonenoypuistojapuhtaanapitotyotkeskustanalue'},
+      {name: 'YIT Rakennus Oy, Puisto- ja puhtaanapitotyöt', code: 'yitrakennusoypuistojapuhtaanapitotyot'},
+    ]
+  }, {
+    department: 'Konserni- ja elinvoimapalveluiden palvelualue',
+    jobs: [
       {name: 'Ympäristöpalvelut', code: 'ymparistopalvelut'},
       {name: 'Terveysvalvonta', code: 'terveysvalvonta'},
-      {name: 'Tukitehtävät (raivaus- ym.)', code: 'tuki'},
-      {name: 'Opastustehtävät', code: 'opastustehtavat'}
-    ]},
-    {department: 'Sivistystoimi', jobs: [
-      {name: 'Nuoriso', code: 'nuoriso'},
-      {name: 'Liikunta, ulkoilualueet, kentät, jäähalli', code: 'liikuntaulkoilu'},
-      {name: 'Liikunta, uimakoulut ja urheilukoulut', code: 'liikuntakoulut'},
-      {name: 'Kirjasto', code: 'kirjasto'},
-      {name: 'Varhaiskasvatus / päivähoito', code: 'varhaiskasvatus'},
-      {name: 'Kulttuuri', code: 'kulttuuri'}
-    ]},
-    {department: 'Sosiaali- ja terveystoimi', jobs: [
-      {name: 'Piristyspartiot / vanhusten palvelut', code: 'piristys'},
+      {name: 'Opastustehtävät', code: 'opastustehtavat'},
+      {name: 'Opastustehtävät / katujuna', code: 'opastustehtavatkatujuna'},
+      {name: 'Pelastuslaitos, valmiuteen ja varautumiseen liittyvät tukitehtävät', code: 'pelastuslaitosvalmiuteenjavarautumiseenliittyvattukitehtavat'},
+      {name: 'Ruoka- ja puhtauspalvelut', code: 'ruokajapuhtauspalvelut'},
+      {name: 'Tukitehtävät (raivaus ym.)', code: 'tukitehtavatraivausym'},
+      {name: 'Asiointipiste', code: 'asiointipiste'},
+    ]
+  }, { 
+    department: 'Essote / peruspalvelutehtävät',
+    jobs: [
       {name: 'Akuuttiosastot', code: 'akuuttiosastot'},
-      {name: 'Terveyspalvelut hallinto', code: 'terveyshallinto'},
-      {name: 'Mielenterveys- ja päihdepalvelut', code: 'mielenterveys'}
-    ]},
-    {department: 'Tekninen toimi', jobs: [
-      {name: 'Mittaus- ja kiinteistöt', code: 'mittaus'},
-      {name: 'Asuntomessut / opastehtävät', code: 'asuntomessut'}
-    ]},
-    {department: 'YIT Kuntatekniikka Oy', jobs: [
-      {name: 'Puisto- ja puhtaanapitotyöt', code: 'puisto'},
-    ]},
-    {department: 'Viherpalvelut Hyvönen Oy', jobs: [
-      {name: 'Puisto - ja puhtaanapitotyöt / keskustan alue', code: 'puistokeskusta'},
-    ]},
-    {department: 'Yhdyskuntatekniikka ja ympäristö', jobs: [
-      {name: 'Puisto- ja puhtaanapitotyöt / Ristiina', code: 'puistoristiina'},
-    ]}
-  ]
+      {name: 'Terveyspalvelut', code: 'terveyspalvelut'},
+      {name: 'Sosiaalipalvelut', code: 'sosiaalipalvelut'},
+      {name: 'Vanhusten piristyspartiot', code: 'vanhustenpiristyspartiot'},
+      {name: 'Vanhus- ja vammaispalvelut', code: 'vanhusjavammaispalvelut'},
+      {name: 'Mielenterveys- ja päihdepalvelujen hallinto', code: 'mielenterveysjapaihdepalvelujenhallinto'},
+      {name: 'Mielenterveys- ja päihdepalvelujen päivä- ja työtoiminta', code: 'mielenterveysjapaihdepalvelujenpaivajatyotoiminta'}
+    ]
+  }]
 };
